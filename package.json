@@ -1,0 +1,12 @@
+{
+  "name": "zhenglei",
+  "version": "1.0.0",
+  "description": "这是node学习练习的代码",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "郑磊",
+  "license": "ISC"
+
+}

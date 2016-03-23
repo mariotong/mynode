@@ -1,0 +1,14 @@
+# Windows:
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Python:
+
+node_modules
+node-0.10.0-release
+*.idea
+
+# My configurations:
+db.ini
+deploy_key_rsa
