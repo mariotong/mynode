@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>多人聊天室</title>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css"/>
+    <style>
+        body{
+            margin-top:20px;
+        }
+        h1,h5{
+            text-align:center;
+        }
+        .user{
+            color:blue;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<h1>郑磊聊天室么么哒</h1>
+<h5>进行多人聊天，而且点击人的名称可以进行私聊</h5>
+<div class="container">
+    <div class="panel panel-success">
+        <div class="panel-heading">
+            欢迎进入聊天室
+        </div>
+        <div class="panel-body">
+            <ul class="list-group" id="messages">
+
+            </ul>
+        </div>
+        <div class="panel-footer">
+            <div class="row">
+                <div class="col-xs-9"><input id="txtMsg" type="text" class="form-control"></div>
+                <div class="col-xs-3"><button id="sendBtn" type="button" class="btn btn-default">发言</button></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/jquery/dist/jquery.js"></script>
+<script>
+    var socket=io.connect('/');
+    socket.on('connect',function(){
+        addMsg({
+            user:'SYSTEM',
+            content:'连接成功'
+        })
+    });
+    socket.on('disconnect',function(){
+        addMsg({
+            user:'SYSTEM',
+            content:'断开连接'
+        })
+    });
+    socket.on('message',function(data){
+        addMsg(data);
+    });
+    function addMsg(msg){
+        $('#messages').append('<li class="list-group-item"><span>'+getTime()+'<br/></span></span><span class="user">'+msg.user+'</span>：'+msg.content+'</li>')
+    }
+    $('#sendBtn').click(function(){
+        socket.send($('#txtMsg').val());
+        $('#txtMsg').val('');
+    });
+    $('#txtMsg').keypress(function(e){
+        var c= e.charCode|| e.keyCode|| e.which;
+        if(c==13){
+            socket.send($('#txtMsg').val());
+            $('#txtMsg').val('');
+        }
+    })
+    function getTime(){
+        return new Date().toLocaleString();
+    }
+    $('body').delegate('.user','click',function(){
+        $('#txtMsg').val('@'+$(this).text()+' ');
+    })
+</script>
+</html>

@@ -1,0 +1,18 @@
+请求头
+Accept-Encoding:gzip, deflate, sdch //接收的压缩类型
+Accept-Language:zh-CN,zh;q=0.8  //接收的语言
+Cache-Control:no-cache
+Connection:Upgrade  //升级协议
+Host:localhost:8080
+Origin:http://localhost:63342
+Pragma:no-cache
+Sec-WebSocket-Extensions:permessage-deflate; client_max_window_bits //扩展名
+Sec-WebSocket-Key:P+9803DRipqbX80w21SB+Q==   //安全KEY
+Sec-WebSocket-Version:13
+Upgrade:websocket  //升级到websocket协议
+User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36
+响应
+Connection:Upgrade
+Sec-WebSocket-Accept:5Su4aG98T0nH5p4SOB386Ln834A= //跟上面的key对应
+Sec-WebSocket-Extensions:permessage-deflate
+Upgrade:websocket

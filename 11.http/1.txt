@@ -1,1 +1,13 @@
-1
+GET/1.1{ host: 'localhost:8080',
+  connection: 'keep-alive',
+  accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36',
+  'accept-encoding': 'gzip,deflate,sdch',
+  'accept-language': 'zh-CN,zh;q=0.8',
+  cookie: 'zhufengblog=s%3AvzSdzypNubKcvTLNz0cnXcFvQFK8zL3g.Bx%2BSxe3uTK9mH2EKQwJiCaiW6MeTt0eWTZDGWisqsjA' }GET/favicon.ico1.1{ host: 'localhost:8080',
+  connection: 'keep-alive',
+  accept: '*/*',
+  'user-agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36',
+  'accept-encoding': 'gzip,deflate,sdch',
+  'accept-language': 'zh-CN,zh;q=0.8',
+  cookie: 'zhufengblog=s%3AvzSdzypNubKcvTLNz0cnXcFvQFK8zL3g.Bx%2BSxe3uTK9mH2EKQwJiCaiW6MeTt0eWTZDGWisqsjA' }

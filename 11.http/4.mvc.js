@@ -16,14 +16,20 @@ var routes=[];
 function use(path,action){
     routes.push([path,action]);
 }
+function add(req,res){
+    res.end('add');
+}
 use('/user/add',add);
 use('add/user',add);
 http.createServer(function(req,res){
     var pathname=url.parse(req.url).pathname;
     for(var i=0;i<routes.length;i++){
         var route=routes[i];
-        if(pathname==routes[i][0]){
-
+        if(pathname==route[0]){
+            var action=route[1];
+            action(req,res);
+            return;
         }
     }
+    res.end('404');
 }).listen(8080);
