@@ -1,0 +1,23 @@
+{
+  "name": "zhenglei",
+  "description": "这是我学习node的时候敲得一些代码",
+  "main": "",
+  "authors": [
+    "424514340@qq.com"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "angular": "~1.4.5",
+    "angular-route": "~1.4.5"
+  }
+}

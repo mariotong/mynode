@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        table, tr, td {
+            border: 1px solid blue;
+            border-collapse: collapse;
+        }
+
+        .keyword {
+            color: darkBlue;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<pre>
+var i=9;
+function fo(){
+	var i=0;
+	return function(n){
+   		 return n+i++;
+    }
+};
+var f=fo();
+var a = f(15);
+var b = fo()(15);
+var c = fo()(20);
+var d = f(20);
+//请问a,b,c,d的值各是什么
+</pre>
+<!--<div>asddfd:1k我叫郑磊来自北化
+</div>
+<div></div>
+<div></div>-->
+</body>
+<script>
+    //把pre标签的js代码进行格式化
+    //var reg=/<(div)>.+<\/\1>/;//贪婪模式
+    //console.log(reg.exec(document.body.innerHTML));//匹配到的结果是"<div>asddfd:1k我叫郑磊来自北化</div><div></div><div></div>"
+    var reg = /<(pre)>((.|\n)*?)<\/\1>/gm;
+    //alert(reg.exec(document.body.innerHTML));
+    var strContent = reg.exec(document.body.innerHTML)[2];
+    var keywordReg = /var|function|return|break|continue|if|for/g;
+    console.log(strContent);
+    if (strContent) {
+        var a = strContent.split("\n");
+        var oT = document.createElement('table');
+        var oTb = document.createElement('tbody');
+        oT.appendChild(oTb);
+        for (var i = 0; i < a.length; i++) {
+            var oTr = document.createElement('tr');
+            var lTd = document.createElement('td');
+            var rTd = document.createElement('td');
+            lTd.innerHTML = i + 1;
+            var str = a[i];
+            str = str.replace(keywordReg, function (s) {
+                console.log(s);
+                return "<span class='keyword'>" + s + "</span>";
+            });
+            str = str.replace(/\t/g, " &nbsp;")
+            rTd.innerHTML = str;
+            oTr.appendChild(lTd);
+            oTr.appendChild(rTd);
+            oTb.appendChild(oTr);
+        }
+        document.body.appendChild(oT);
+    }
+</script>
+</html>
