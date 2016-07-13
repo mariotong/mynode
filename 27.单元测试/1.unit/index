@@ -1,0 +1,40 @@
+# 知识
+-测试框架 mocha
+-断言库 should assert
+
+#安装
+ npm install mocha -g
+ npm install should --save
+
+#官网
+http://mochajs.org/
+https://github.com/tj/should.js
+
+#javascript 覆盖率工具--istanbul
+
+C:\Users\Administrator\Desktop\mynode\27.单元测试\1.unit>istanbul cover ../../no
+de_modules/mocha/bin/_mocha
+
+
+  我要测试一个除法的函数
+    √ 4除以2等于2
+    √ 除数不能为零
+    √ 除数和被除数都必须是数字
+
+
+  3 passing (19ms)
+
+=============================================================================
+Writing coverage object [C:\Users\Administrator\Desktop\mynode\27.单元测试\1.uni
+t\coverage\coverage.json]
+Writing coverage reports at [C:\Users\Administrator\Desktop\mynode\27.单元测试\1
+.unit\coverage]
+=============================================================================
+
+=============================== Coverage summary ===============================
+
+Statements   : 100% ( 7/7 )
+Branches     : 100% ( 6/6 )
+Functions    : 100% ( 1/1 )
+Lines        : 100% ( 7/7 )
+================================================================================

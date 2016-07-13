@@ -1,0 +1,34 @@
+var async = require('async');
+//串行
+console.time('cost');
+/*async.series([function(next){
+   setTimeout(function(){
+   		next(); 
+   },1000);
+},function(next){
+   setTimeout(function(){
+        next();
+   },2000);
+}],function(err,result){
+   console.timeEnd('cost');
+});*/
+var arr=[1,2,3,4,5];
+/*arr.forEach(function(item){
+	setTimeout(function(){
+		console.log(item);
+		console.timeEnd('cost');
+	},(5-item)*1000);//5,4,3,2,1
+});*/
+//迭代异步函数，同时执行
+async.each(arr,function(item,next){
+	setTimeout(function(){
+		console.log(item);
+		next();
+	},1*1000);
+},function(next){
+	setTimeout(function(){
+		console.log("zhenglei");
+	},2*1000);
+},function(){
+	console.timeEnd('cost');
+})//当所有的异步操作完毕时，执行最后一个函数

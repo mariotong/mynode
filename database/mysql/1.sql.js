@@ -12,7 +12,8 @@ var connection=mysql.createConnection({
     }
 });
 connection.connect();
-var sql='select * from blog_user';
+var username='zhenglei';
+var sql="select * from blog_user where user='"+ username+"'";//记得要用单引号括起来
 connection.query(sql,function(err,rows,fields){
     if(err){
         throw err;

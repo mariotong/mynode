@@ -7,7 +7,7 @@ Desktop.ini
 
 node_modules
 node-0.10.0-release
-.idea
+*.idea
 
 # My configurations:
 db.ini

@@ -1,0 +1,4 @@
+#浏览器单元测试
+mocha init .
+
+JavaScript代码覆盖率工具：istanbul
